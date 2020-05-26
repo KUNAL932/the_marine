@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:the_marin/pagecheckout/checkout.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart'; 
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   var rating = 3.0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,7 +100,16 @@ class HomeScreen extends StatelessWidget {
                      child: Text("(23 reviews)"))
                 ],
               ),
-            )
+            ),
+            SizedBox(height: 20,),
+            Container(child: Text("Food Categories",
+            style: TextStyle(
+              color: Colors.purple,
+              fontSize: 16,
+              fontWeight: FontWeight.w600
+            ),
+            ),
+            ),
           ],
         ),
       ),
