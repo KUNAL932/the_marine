@@ -1,4 +1,4 @@
-# the_marin
+# the_marine
 
 A new Flutter application.
 
