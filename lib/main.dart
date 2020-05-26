@@ -8,7 +8,11 @@ class TheMarine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // title: "The Marine",
+      // initialRoute: '/',
+      // routes: {
+        // '/': (BuildContext context) => HomeScreen(),
+        // '/checkout': (BuildContext context) => Checkout(),
+      // },
       theme: ThemeData(
         primarySwatch: Colors.purple,
         backgroundColor: Colors.purple,
