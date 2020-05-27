@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:the_marin/pagecheckout/checkout.dart';
+// import 'package:the_marin/pagecheckout/checkout.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart'; 
-
+import 'package:the_marin/screens/products_overview_screen.dart';
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
              onPressed: () {
                Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Checkout()),
+                  MaterialPageRoute(builder: (context) => ProductsOverviewScreen()),
                 );
              }
              ),
