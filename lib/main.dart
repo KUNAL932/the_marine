@@ -10,9 +10,10 @@ class TheMarine extends StatelessWidget {
     return MaterialApp(
       
       theme: ThemeData(
+        fontFamily: 'Teko',
         primarySwatch: Colors.purple,
         backgroundColor: Colors.purple,
-        accentColor: Colors.white,
+        accentColor: Colors.deepOrange,
         accentColorBrightness: Brightness.dark,
         buttonTheme: ButtonTheme.of(context).copyWith(
           buttonColor: Colors.purple,

@@ -59,12 +59,15 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
             ),
             SizedBox(height: 12,),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius:
-                 BorderRadius.circular(12),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10.0),
+                child: Container(
+                decoration: BoxDecoration(
+                  borderRadius:
+                   BorderRadius.circular(12),
+                ),
+                 child: Image.network("https://sifu.unileversolutions.com/image/en-LK/recipe-topvisual/2/1260-709/authentic-chicken-biryani-50434132.jpg",fit: BoxFit.cover,)
               ),
-               child: Image.network("https://sifu.unileversolutions.com/image/en-LK/recipe-topvisual/2/1260-709/authentic-chicken-biryani-50434132.jpg",fit: BoxFit.cover,)
             ),
             SizedBox(height: 12,),
             Container(child: Text("Chicken Biryani",
