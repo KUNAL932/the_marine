@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home/homescreen.dart';
+import 'package:the_marin/screens/homescreen.dart';
 void main() => runApp(
     TheMarine(),
   );

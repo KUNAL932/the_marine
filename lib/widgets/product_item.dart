@@ -5,9 +5,11 @@ import 'package:the_marin/screens/products_detail_screen.dart';
 class ProductItem extends StatelessWidget {
   final String id;
   final String title;
+  final String description;
+  final double price;
   final String imageUrl;
 
-  ProductItem(this.id,this.title,this.imageUrl);
+  ProductItem(this.id,this.title,this.description,this.price,this.imageUrl);
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -15,7 +17,7 @@ class ProductItem extends StatelessWidget {
         child: GridTile(
           child: GestureDetector(
             onTap:() {
-              Navigator.of(context).push(MaterialPageRoute(builder: (ctx) =>ProductsDetailScreen(id,title),),);
+              Navigator.of(context).push(MaterialPageRoute(builder: (ctx) =>ProductsDetailScreen(id,title,description,price,imageUrl),),);
             },
             child:Image.network(imageUrl,
             fit: BoxFit.cover,

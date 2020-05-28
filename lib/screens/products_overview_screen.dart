@@ -50,7 +50,11 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
             itemCount: loadedProducts.length,
             itemBuilder: (ctx ,i) => ProductItem(loadedProducts[i].id ,
             loadedProducts[i].title,
-            loadedProducts[i].imageUrl),
+            loadedProducts[i].description,
+            loadedProducts[i].price,
+            loadedProducts[i].imageUrl,
+            ),
+            
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 3/2 , crossAxisSpacing: 10, mainAxisSpacing: 10),
       )
       );
