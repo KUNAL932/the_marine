@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-class ProductsDetailScreen extends StatelessWidget {
+class ProductsDetailScreen extends StatefulWidget {
+
+
   final String id;
   final String title;
   final String description;
@@ -8,21 +10,41 @@ class ProductsDetailScreen extends StatelessWidget {
   final String imageUrl;
 
   ProductsDetailScreen(this.id,this.title,this.description,this.price,this.imageUrl);
+
+  @override
+  _ProductsDetailScreenState createState() => _ProductsDetailScreenState();
+}
+
+class _ProductsDetailScreenState extends State<ProductsDetailScreen> {
+  int quantity = 1;
+    void subtract() {
+      setState(() {
+        quantity--;
+      });
+    
+    }
+    void add() {
+      setState(() {
+        quantity++;
+      });
+      
+    }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(widget.title),
       ),
       body: Padding(
         padding: EdgeInsets.all(10),
         child: ListView(children: <Widget>[
           Container(
-            child: Image.network(imageUrl,
+            child: Image.network(widget.imageUrl,
             fit: BoxFit.cover, height: 300,width: 400,
             ),
           ),
-          Container(child: Text(title,
+          SizedBox(height: 14.0,),
+          Container(child: Text(widget.title,
           style: TextStyle(
             color: Theme.of(context).primaryColor,
             fontSize: 18,
@@ -30,19 +52,40 @@ class ProductsDetailScreen extends StatelessWidget {
           ),
           ),
           ),
-          Container(child: Text("Description",
-          style: TextStyle(
-            fontSize: 22.0,
-            color: Theme.of(context).accentColor,
-          ),
-          ),),
-          Container(child: Text(description,
+          // Container(child: Text("Description",
+          // style: TextStyle(
+          //   fontSize: 22.0,
+          //   color: Theme.of(context).accentColor,
+          // ),
+          // ),),
+          Container(child: Text(widget.description,
           style: TextStyle(
             color: Theme.of(context).primaryColor,
             fontSize: 18
           ),
           )
           ),
+          Container(
+            child: Row(children: <Widget>[
+              Text("Quantity -"),
+              Container(
+                child: IconButton(
+                  onPressed: () => subtract(),
+                  icon: Icon(Icons.remove),)
+              ),
+              Text("$quantity"),
+              Container(
+                child: IconButton(
+                  onPressed: () => add(),
+                  icon: Icon(Icons.add),
+                ),
+              ),
+            ],)
+          ),
+          Container(
+            child: RaisedButton(
+              onPressed: () {},child: Text("Buy"),),
+          )
         ],),
         ),
     );

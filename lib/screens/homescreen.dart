@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart'; 
 import 'package:the_marin/screens/products_overview_screen.dart';
-import 'package:provider/provider.dart';
-import 'package:the_marin/providers/product_providers.dart';
+import 'package:the_marin/screens/checkout.dart';
+// import 'package:the_marin/providers/product_providers.dart';
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
                onPressed: () {
                  Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ProductsOverviewScreen()),
+                    MaterialPageRoute(builder: (context) => Checkout()),
                   );
                }
                ),
@@ -51,12 +51,21 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 Container(
-                  child: Text("View More",
-                  style: TextStyle(
-                    color: Colors.purple,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600
-                  ),
+                  child: FlatButton(
+                    onPressed: () {
+                        Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ProductsOverviewScreen()),
+                  );
+
+                    },
+                    child: Text("View More",
+                    style: TextStyle(
+                      color: Colors.purple,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600
+                    ),
+                    ),
                   ),
                 ),
               ],
@@ -93,13 +102,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       borderColor: Colors.grey[400],
                       starCount: 5,
                       rating: rating,
-                      // fullRatedIconData: Icons.blur_off,
-                      // halfRatedIconData: Icons.blur_on,
                       size: 20.0,
                       spacing: 0.5,
                       isReadOnly:true,
                     ),
-                    SizedBox(width:4.0),
+                    SizedBox(width: 10.0),
                     Text("5 star"),
                     FlatButton(
                       onPressed: null,
