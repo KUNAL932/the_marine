@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart'; 
 import 'package:the_marin/screens/products_overview_screen.dart';
-import 'package:the_marin/screens/checkout.dart';
+// import 'package:the_marin/screens/checkout.dart';
 // import 'package:the_marin/providers/product_providers.dart';
 class HomeScreen extends StatefulWidget {
   @override
@@ -22,17 +22,17 @@ class _HomeScreenState extends State<HomeScreen> {
             fontWeight: FontWeight.w600
           ),
           ),
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(Icons.shopping_cart),
-               onPressed: () {
-                 Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Checkout()),
-                  );
-               }
-               ),
-          ],
+          // actions: <Widget>[
+          //   IconButton(
+          //     icon: Icon(Icons.shopping_cart),
+          //      onPressed: () {
+          //        Navigator.push(
+          //           context,
+          //           MaterialPageRoute(builder: (context) => Checkout()),
+          //         );
+          //      }
+          //      ),
+          // ],
         ),
         body: Padding(
           padding: const EdgeInsets.all(12.0),

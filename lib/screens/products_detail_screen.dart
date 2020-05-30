@@ -16,7 +16,8 @@ class ProductsDetailScreen extends StatefulWidget {
 
 class _ProductsDetailScreenState extends State<ProductsDetailScreen> {
 
- 
+  String available ="Available";
+  String unavailable = "Unavailable";
   int quantity = 1;
 
 void subtract() {
@@ -67,7 +68,11 @@ void add() {
           )
           ),
           Container(
-            child: Row(children: <Widget>[
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+              Container(
+                child: Row(children: <Widget>[
               Text("Quantity -"),
               Container(
                 child: IconButton(
@@ -81,15 +86,27 @@ void add() {
                   icon: Icon(Icons.add),
                 ),
               ),
+              ],)
+              ), 
               Container(
-                child: Text("price"),
+                child: Row(
+                  children: <Widget>[
+                    Text("Availability -"),
+                    SizedBox(width: 10.0,),
+                    Text('$available',
+                    style: TextStyle(
+                      color: Colors.black54,
+                    ),
+                    )
+                  ],
+                ),
               ),
             ],)
           ),
           Container(
             child: RaisedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Checkout(),),);
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Checkout(widget.title,widget.description,widget.price,widget.imageUrl),),);
               },child: Text("Buy"),),
           )
         ],),
