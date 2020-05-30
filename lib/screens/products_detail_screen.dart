@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:the_marin/screens/checkout.dart';
 class ProductsDetailScreen extends StatefulWidget {
-
 
   final String id;
   final String title;
@@ -10,25 +9,27 @@ class ProductsDetailScreen extends StatefulWidget {
   final String imageUrl;
 
   ProductsDetailScreen(this.id,this.title,this.description,this.price,this.imageUrl);
-
+  
   @override
   _ProductsDetailScreenState createState() => _ProductsDetailScreenState();
 }
 
 class _ProductsDetailScreenState extends State<ProductsDetailScreen> {
+
+ 
   int quantity = 1;
-    void subtract() {
-      setState(() {
-        quantity--;
-      });
+
+void subtract() {
+    setState(() {
+      quantity--;
+    });
+  }
+void add() {
+  setState(() {
+    quantity++;
+  });
+  }
     
-    }
-    void add() {
-      setState(() {
-        quantity++;
-      });
-      
-    }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,11 +81,16 @@ class _ProductsDetailScreenState extends State<ProductsDetailScreen> {
                   icon: Icon(Icons.add),
                 ),
               ),
+              Container(
+                child: Text("price"),
+              ),
             ],)
           ),
           Container(
             child: RaisedButton(
-              onPressed: () {},child: Text("Buy"),),
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Checkout(),),);
+              },child: Text("Buy"),),
           )
         ],),
         ),
