@@ -20,6 +20,8 @@ class Checkout extends StatelessWidget {
     Product(id: "snack4", title: "Masala Tea", description: "Masala chai is a flavoured tea beverage made by brewing black tea with a mixture of aromatic Indian spices and herbs. Originating in the Indian subcontinent,", price: 20.0, imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTenBtIrSe_-oxFfMzE8CzMsTcv2LvR6Cj3_I6u3ByIrlRoSigE&usqp=CAU"),
     Product(id: "snack5", title: "Soda", description: "A soft drink is a drink that usually contains carbonated water, a sweetener, and a natural or artificial flavoring", price: 30.0, imageUrl: "https://www.coca-colaindia.com/content/dam/journey/in/en/private/our-brands/Kinley%20Soda/iNDIA-PROD.rendition.300.270.jpg"),
   ];
+
+  double get quantity => null;
   @override
   Widget build(BuildContext context) {
     
@@ -104,7 +106,7 @@ class Checkout extends StatelessWidget {
                               width: 400,
                               child: RaisedButton(
                                 onPressed: (){
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>PlaceOrder(),),);
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>PlaceOrder(title,quantity,price,imageUrl),),);
                                 },
                                 child: Text("Save And Continue"),
                                 ),
