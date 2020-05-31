@@ -54,12 +54,6 @@ void add() {
           ),
           ),
           ),
-          // Container(child: Text("Description",
-          // style: TextStyle(
-          //   fontSize: 22.0,
-          //   color: Theme.of(context).accentColor,
-          // ),
-          // ),),
           Container(child: Text(widget.description,
           style: TextStyle(
             color: Theme.of(context).primaryColor,
