@@ -6,30 +6,33 @@ class SnackAdvertisment extends StatelessWidget {
   String description;
   double price;
   String imageUrl;
-
+  
   SnackAdvertisment(this.title,this.description,this.price,this.imageUrl);
   @override
   Widget build(BuildContext context) {
     return Card(
-              elevation: 6,
-              color: Colors.white,
+              elevation: 8,
               shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.0),
+              borderRadius: BorderRadius.circular(5.0),
               ),
               child: Container(
-                padding: EdgeInsets.all(15.0),
+                height: 220,
+                width: 220,
+                padding: EdgeInsets.all(10.0),
                 child: Column(
-            
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       Container(
-                        height: 100,
-                        width: 100,
                         child: Align(alignment: Alignment.topLeft,
                         child: Image.network(imageUrl,
+                        fit: BoxFit.cover,
+                        height: 90,
+                        width: 90,
                         ),
                         ),
                         ),
@@ -62,6 +65,21 @@ class SnackAdvertisment extends StatelessWidget {
                           ],
                         ),
                         ),
+                          Container(
+                          // margin: EdgeInsets.symmetric(horizontal:30),
+                          // padding: EdgeInsets.fromLTRB(0,0, 0,20),
+                          child: FlatButton(
+                            onPressed: () {},
+                            child: Text("Add",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Theme.of(context).backgroundColor,
+                              fontWeight: FontWeight.w600
+
+                            )  ,
+                            ),),
+                        ),
+                        
                         ],
                       ),
                       
@@ -71,22 +89,6 @@ class SnackAdvertisment extends StatelessWidget {
                   
 
                 
-                Divider(thickness: 1.0,
-                color: Colors.black,
-                ),
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal:30),
-                  child: FlatButton(
-                    onPressed: () {},
-                     child: Text("Add",
-                     style: TextStyle(
-                       fontSize: 16,
-                      color: Theme.of(context).backgroundColor,
-                      fontWeight: FontWeight.w600
-
-                     )  ,
-                     ),),
-                )
                 ]
                 
                 ),
