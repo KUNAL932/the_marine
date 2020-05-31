@@ -38,7 +38,6 @@ class _SnackAdvertismentState extends State<SnackAdvertisment> {
                         child: Image.network(widget.imageUrl,
                         fit: BoxFit.fitWidth,
                         height: 90,
-                        // width: 90,
                         ),
                         ),
                         ),

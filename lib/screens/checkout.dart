@@ -87,15 +87,16 @@ class Checkout extends StatelessWidget {
                           Card(
                             color: Colors.white,
                             child: Container(
+                              padding: EdgeInsets.all(10.0),
                               child: Column(children: <Widget>[
                                 Text("YOUR ADDRESS"),
                                 TextField(
                               controller: addressController,
                       decoration: InputDecoration(
                       
-                        border: UnderlineInputBorder(),
+                        border: InputBorder.none,
                         hintText: "Enter Your location",
-                        labelText: "Address",
+                        labelText: "Near Point/Next To",
                         
                       ),
                       maxLines:2,

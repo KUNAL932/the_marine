@@ -17,13 +17,14 @@ class _CartItemState extends State<CartItem> {
   void subtract() {
     setState(() {
       quantity--;
-    
+      // widget.price = widget.price - [widget.price* quantity];
     });
   }
 
 void add() {
   setState(() {
     quantity++;
+    // widget.price = widget.price+(widget.price* quantity);
   });
   }
 
@@ -39,7 +40,7 @@ void add() {
           ListTile(
             leading: Image.network(widget.imageUrl,
              fit: BoxFit.contain,
-             height: 80,
+             height: 90,
             //  width: 120,
             ),
             title: Text(widget.title,
