@@ -17,11 +17,11 @@ class SnackAdvertisment extends StatelessWidget {
               borderRadius: BorderRadius.circular(10.0),
               ),
               child: Container(
-                padding: EdgeInsets.all(10),
+                padding: EdgeInsets.all(15.0),
                 child: Column(
             
                 mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Row(
                     children: <Widget>[
@@ -32,53 +32,67 @@ class SnackAdvertisment extends StatelessWidget {
                         child: Image.network(imageUrl,
                         ),
                         ),
-                      ),
-                      Container(
-                    child:Text(title,
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500
-                    ),
-                    ),
-                  ),
-                  
-                    ],
-                  ),
-                  
-                Container(
-
-                    child: Row(
-                      children: <Widget>[
-                        Text("Rs",
+                        ),
+                      Column(
+                        children: <Widget>[
+                          Container(
+                            child:Text(title,
                             style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500
-                          ),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500
                             ),
-                            SizedBox(width: 5.0,),
-                            Text("$price",
-                            style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500
+                            ),
+                            ),
+                          Container(
+                            child: Row(
+                              children: <Widget>[
+                                Text("Rs",
+                                    style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500
+                                  ),
+                                    ),
+                                SizedBox(width: 5.0,),
+                                Text("$price",
+                                style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500
+                            ),
+                            ),
+                          ],
                         ),
                         ),
+                        ],
+                      ),
+                      
+                  
                       ],
                     ),
-                  ),
-                Divider(thickness: 2.0,),
-                Card(
-                  child: Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
+                  
 
-                    ],)
-                  ),
-                ),  
-                ]
+                
+                Divider(thickness: 1.0,
+                color: Colors.blue,
                 ),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal:30),
+                  child: FlatButton(
+                    onPressed: () {},
+                     child: Text("Add",
+                     style: TextStyle(
+                       fontSize: 16,
+                      color: Theme.of(context).backgroundColor,
+                      fontWeight: FontWeight.w600
+
+                     )  ,
+                     ),),
+                )
+                ]
+                
+                ),
+                
               ),
+              
               );
   }
 }

@@ -160,16 +160,19 @@ void add() {
                   child: Container(
                     padding: EdgeInsets.all(10.0),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                           Icon(Icons.add_shopping_cart),
+                          // SizedBox(width: 10.0,),
                           Column( children: <Widget>[
                             Text("SELECT OFFER/APPLY COUPON"),
                             Text("Get discout with your order",
                             style:TextStyle(color: Colors.black54)
                             ),
-                          ]),
+                          ]
+                          ),
+                          Icon(Icons.arrow_forward_ios)
                     ],)
                   ),
                 ), 
