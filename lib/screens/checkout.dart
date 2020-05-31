@@ -65,31 +65,51 @@ class Checkout extends StatelessWidget {
                                 onTap: () {},
                                   child: Container(
                                   padding: EdgeInsets.all(10.0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                  child: Column(
                                     children: <Widget>[
-                                        Icon(Icons.add_shopping_cart,
-                                        color: Theme.of(context).backgroundColor,
-                                        ),
-                                        // SizedBox(width: 10.0,),
-                                        Column( children: <Widget>[
-                                          Text("SELECT OFFER/APPLY COUPON"),
-                                          Text("Get discout with your order",
-                                          style:TextStyle(color: Colors.black54)
-                                          ),
-                                        ]
-                                        ),
-                                        Icon(Icons.arrow_forward_ios,
-                                        color: Theme.of(context).backgroundColor,
-                                        )
-                                  ],)
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        children: <Widget>[
+                                            Icon(Icons.add_shopping_cart,
+                                            color: Theme.of(context).backgroundColor,
+                                            ),
+                                            Column( children: <Widget>[
+                                              Text("SELECT OFFER/APPLY COUPON"),
+                                              Text("Get discout with your order",
+                                              style:TextStyle(color: Colors.black54)
+                                              ),
+                                              
+                                            ]
+                                            ),
+                                            RaisedButton(
+                                              onPressed: () {},
+                                              child: Text("Apply"),)
+                                      ],),
+                                      TextField(
+                                                decoration: InputDecoration(
+                                                  hintText: "Enter coupon for offer",
+                                                  border: InputBorder.none,
+                                                  labelText: "6 digit coupon"
+                                                  ),
+                                                  
+                                              ),
+                                    ],
+                                  )
                                 ),
                               ),
                             ), 
+                            Container(
+                              width: 400,
+                              child: RaisedButton(
+                                onPressed: (){},
+                                child: Text("Save And Continue"),
+                                ),
+                            ),
                           
 
-          ],),
+          ],
+          ),
         ),
     );
   }

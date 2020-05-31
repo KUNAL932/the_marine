@@ -10,21 +10,21 @@ class PlaceOrder extends StatelessWidget {
         title: Text("Place Order"),
       ),
       body: Card(
-                            color: Colors.white,
-                            child: Container(
-                              padding: EdgeInsets.all(10.0),
-                              child: Column(children: <Widget>[
-                                Text("YOUR ADDRESS"),
-                                TextField(
-                              controller: addressController,
-                              decoration: InputDecoration(
-                              
-                                border: InputBorder.none,
-                                hintText: "Enter Your location",
-                                labelText: "Near Point/Next To",
-                                
-                              ),
-                      maxLines:2,
+              color: Colors.white,
+              child: Container(
+                padding: EdgeInsets.all(10.0),
+                child: Column(children: <Widget>[
+                  Text("YOUR ADDRESS"),
+                  TextField(
+                controller: addressController,
+                decoration: InputDecoration(
+                
+                  border: InputBorder.none,
+                  hintText: "Enter Your location",
+                  labelText: "Near Point/Next To",
+                  
+                ),
+                   maxLines:2,
                       
                     ),
                   ],)
