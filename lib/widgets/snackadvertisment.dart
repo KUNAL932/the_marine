@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class SnackAdvertisment extends StatelessWidget {
+class SnackAdvertisment extends StatefulWidget {
 
   String title;
   String description;
@@ -8,7 +8,12 @@ class SnackAdvertisment extends StatelessWidget {
   String imageUrl;
   
   SnackAdvertisment(this.title,this.description,this.price,this.imageUrl);
-  
+
+  @override
+  _SnackAdvertismentState createState() => _SnackAdvertismentState();
+}
+
+class _SnackAdvertismentState extends State<SnackAdvertisment> {
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -17,8 +22,8 @@ class SnackAdvertisment extends StatelessWidget {
               borderRadius: BorderRadius.circular(5.0),
               ),
               child: Container(
-                height: 220,
-                width: 220,
+                // height: 220,
+                // width: 220,
                 padding: EdgeInsets.all(10.0),
                 child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -30,17 +35,17 @@ class SnackAdvertisment extends StatelessWidget {
                     children: <Widget>[
                       Container(
                         child: Align(alignment: Alignment.topLeft,
-                        child: Image.network(imageUrl,
-                        fit: BoxFit.cover,
+                        child: Image.network(widget.imageUrl,
+                        fit: BoxFit.fitWidth,
                         height: 90,
-                        width: 90,
+                        // width: 90,
                         ),
                         ),
                         ),
                       Column(
                         children: <Widget>[
                           Container(
-                            child:Text(title,
+                            child:Text(widget.title,
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w500
@@ -57,7 +62,7 @@ class SnackAdvertisment extends StatelessWidget {
                                   ),
                                     ),
                                 SizedBox(width: 5.0,),
-                                Text("$price",
+                                Text("${widget.price}",
                                 style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500
