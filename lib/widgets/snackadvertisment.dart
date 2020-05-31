@@ -8,6 +8,7 @@ class SnackAdvertisment extends StatelessWidget {
   String imageUrl;
   
   SnackAdvertisment(this.title,this.description,this.price,this.imageUrl);
+  
   @override
   Widget build(BuildContext context) {
     return Card(
