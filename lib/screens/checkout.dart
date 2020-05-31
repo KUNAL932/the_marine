@@ -21,7 +21,7 @@ class Checkout extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    final addressController = TextEditingController();
+    
                 return Scaffold(
                   backgroundColor: Colors.grey[300],
                   appBar: AppBar(
@@ -61,50 +61,33 @@ class Checkout extends StatelessWidget {
                           ),
                         ),
                          Card(
-                              child: Container(
-                                padding: EdgeInsets.all(10.0),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: <Widget>[
-                                      Icon(Icons.add_shopping_cart,
-                                      color: Theme.of(context).backgroundColor,
-                                      ),
-                                      // SizedBox(width: 10.0,),
-                                      Column( children: <Widget>[
-                                        Text("SELECT OFFER/APPLY COUPON"),
-                                        Text("Get discout with your order",
-                                        style:TextStyle(color: Colors.black54)
+                              child: GestureDetector(
+                                onTap: () {},
+                                  child: Container(
+                                  padding: EdgeInsets.all(10.0),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: <Widget>[
+                                        Icon(Icons.add_shopping_cart,
+                                        color: Theme.of(context).backgroundColor,
                                         ),
-                                      ]
-                                      ),
-                                      Icon(Icons.arrow_forward_ios,
-                                      color: Theme.of(context).backgroundColor,
-                                      )
-                                ],)
+                                        // SizedBox(width: 10.0,),
+                                        Column( children: <Widget>[
+                                          Text("SELECT OFFER/APPLY COUPON"),
+                                          Text("Get discout with your order",
+                                          style:TextStyle(color: Colors.black54)
+                                          ),
+                                        ]
+                                        ),
+                                        Icon(Icons.arrow_forward_ios,
+                                        color: Theme.of(context).backgroundColor,
+                                        )
+                                  ],)
+                                ),
                               ),
                             ), 
-                          Card(
-                            color: Colors.white,
-                            child: Container(
-                              padding: EdgeInsets.all(10.0),
-                              child: Column(children: <Widget>[
-                                Text("YOUR ADDRESS"),
-                                TextField(
-                              controller: addressController,
-                      decoration: InputDecoration(
-                      
-                        border: InputBorder.none,
-                        hintText: "Enter Your location",
-                        labelText: "Near Point/Next To",
-                        
-                      ),
-                      maxLines:2,
-                      
-                    ),
-                  ],)
-                ),
-              ),
+                          
 
           ],),
         ),

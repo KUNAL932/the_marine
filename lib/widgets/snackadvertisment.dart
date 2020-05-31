@@ -27,7 +27,7 @@ class _SnackAdvertismentState extends State<SnackAdvertisment> {
                 padding: EdgeInsets.all(10.0),
                 child: Column(
                 mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Row(
