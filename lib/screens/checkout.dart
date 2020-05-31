@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:the_marin/model/products.dart';
 import 'package:the_marin/widgets/snackadvertisment.dart';
 import 'package:the_marin/widgets/cart_item.dart';
+import 'package:the_marin/screens/place_order.dart';
 
 class Checkout extends StatelessWidget {
   @required final String title;
@@ -102,7 +103,9 @@ class Checkout extends StatelessWidget {
                             Container(
                               width: 400,
                               child: RaisedButton(
-                                onPressed: (){},
+                                onPressed: (){
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>PlaceOrder(),),);
+                                },
                                 child: Text("Save And Continue"),
                                 ),
                             ),
