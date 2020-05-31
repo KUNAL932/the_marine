@@ -163,7 +163,9 @@ void add() {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                          Icon(Icons.add_shopping_cart),
+                          Icon(Icons.add_shopping_cart,
+                          color: Theme.of(context).backgroundColor,
+                          ),
                           // SizedBox(width: 10.0,),
                           Column( children: <Widget>[
                             Text("SELECT OFFER/APPLY COUPON"),
@@ -172,7 +174,9 @@ void add() {
                             ),
                           ]
                           ),
-                          Icon(Icons.arrow_forward_ios)
+                          Icon(Icons.arrow_forward_ios,
+                          color: Theme.of(context).backgroundColor,
+                          )
                     ],)
                   ),
                 ), 

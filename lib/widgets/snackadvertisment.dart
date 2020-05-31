@@ -72,7 +72,7 @@ class SnackAdvertisment extends StatelessWidget {
 
                 
                 Divider(thickness: 1.0,
-                color: Colors.blue,
+                color: Colors.black,
                 ),
                 Container(
                   margin: EdgeInsets.symmetric(horizontal:30),
