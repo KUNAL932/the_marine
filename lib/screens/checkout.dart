@@ -21,7 +21,7 @@ class Checkout extends StatelessWidget {
     Product(id: "snack5", title: "Soda", description: "A soft drink is a drink that usually contains carbonated water, a sweetener, and a natural or artificial flavoring", price: 30.0, imageUrl: "https://www.coca-colaindia.com/content/dam/journey/in/en/private/our-brands/Kinley%20Soda/iNDIA-PROD.rendition.300.270.jpg"),
   ];
 
-  double get quantity => null;
+  double get quantity => 12;
   @override
   Widget build(BuildContext context) {
     

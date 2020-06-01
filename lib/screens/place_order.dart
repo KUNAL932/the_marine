@@ -47,7 +47,7 @@ class PlaceOrder extends StatelessWidget {
                           elevation: 6,
                           color: Colors.white,
                           child: Container(
-                            padding: EdgeInsets.all(10.0),
+                            padding: EdgeInsets.all(5.0),
                             child: Column(children: <Widget>[
                               // Text("YOUR ADDRESS"),
                               TextField(
@@ -66,7 +66,7 @@ class PlaceOrder extends StatelessWidget {
                           elevation: 6, 
                           color: Colors.white,
                           child: Container(
-                            padding: EdgeInsets.all(10.0),
+                            padding: EdgeInsets.all(5.0),
                             child: Column(children: <Widget>[
                               // Text("YOUR ADDRESS"),
                               TextField(
@@ -86,7 +86,7 @@ class PlaceOrder extends StatelessWidget {
                           elevation: 6, 
                           color: Colors.white,
                           child: Container(
-                            padding: EdgeInsets.all(10.0),
+                            padding: EdgeInsets.all(5.0),
                             child: Column(children: <Widget>[
                               TextField(
                             controller: addressController,
@@ -103,12 +103,24 @@ class PlaceOrder extends StatelessWidget {
                       ],),
                     ),
                   ),
+                  Card(
+                    child: Container(
+                      child: Column(children: <Widget> [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                          Text("Total"),
+                          Chip(
+                            label: Text("123"),
+                            backgroundColor: Theme.of(context).backgroundColor,)
+                        ],)
+                      ]),),
+                  ),
                    Align(
                      alignment: Alignment.bottomCenter,
                           child: Container(
-                            margin: EdgeInsets.symmetric(vertical: 20),
+                            // margin: EdgeInsets.symmetric(vertical: 20),
                           width: 400,
-                          
                           child: RaisedButton(
                             onPressed: (){
                               // Navigator.of(context).push(MaterialPageRoute(builder: (context)=>PlaceOrder,),);
