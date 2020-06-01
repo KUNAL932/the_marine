@@ -105,13 +105,14 @@ class PlaceOrder extends StatelessWidget {
                   ),
                   Card(
                     child: Container(
+                      padding: EdgeInsets.all(10),
                       child: Column(children: <Widget> [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                           Text("Total"),
                           Chip(
-                            label: Text("123"),
+                            label: Text("$price"),
                             backgroundColor: Theme.of(context).backgroundColor,)
                         ],)
                       ]),),
