@@ -82,38 +82,48 @@ class PlaceOrder extends StatelessWidget {
                               ],)
                             ),
                           ),
-                          Card(
-                          elevation: 6, 
-                          color: Colors.white,
-                          child: Container(
-                            padding: EdgeInsets.all(5.0),
-                            child: Column(children: <Widget>[
-                              TextField(
-                            controller: addressController,
-                            decoration: InputDecoration(
-                              border: UnderlineInputBorder(),
-                              labelText: "STATE",                              
-                            ),
-                              maxLines:1,
+                          // Card(
+                          // elevation: 6, 
+                          // color: Colors.white,
+                          // child: Container(
+                          //   padding: EdgeInsets.all(5.0),
+                          //   child: Column(children: <Widget>[
+                          //     TextField(
+                          //   controller: addressController,
+                          //   decoration: InputDecoration(
+                          //     border: UnderlineInputBorder(),
+                          //     labelText: "STATE",                              
+                          //   ),
+                          //     maxLines:1,
                                 
-                                ),
-                              ],)
-                            ),
-                          ),
+                          //       ),
+                          //     ],)
+                          //   ),
+                          // ),
                       ],),
                     ),
                   ),
                   Card(
                     child: Container(
+                      width: 400,
+                      height: 100,
                       padding: EdgeInsets.all(10),
                       child: Column(children: <Widget> [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                           Text("Total"),
-                          Chip(
-                            label: Text("$price"),
-                            backgroundColor: Theme.of(context).backgroundColor,)
+                          Column(
+                            children: <Widget>[
+                              Chip(
+                                label: Text("$price"),
+                                // shape: ShapeBorder.lerp(),
+                                backgroundColor: Theme.of(context).backgroundColor,),
+                              Text("$quantity"),
+                              
+                            ],
+                          ),
+
                         ],)
                       ]),),
                   ),
