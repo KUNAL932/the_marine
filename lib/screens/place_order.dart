@@ -110,21 +110,25 @@ class PlaceOrder extends StatelessWidget {
                       padding: EdgeInsets.all(10),
                       child: Column(children: <Widget> [
                         Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                          children: <Widget>[
+                            Text("Quantity"),
+                            Text("$quantity"),
+                          ],
+                        ),
+                        Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                           Text("Total"),
-                          Column(
-                            children: <Widget>[
-                              Chip(
-                                label: Text("$price"),
-                                // shape: ShapeBorder.lerp(),
-                                backgroundColor: Theme.of(context).backgroundColor,),
-                              Text("$quantity"),
-                              
-                            ],
-                          ),
+                          Chip(
+                            label: Text("$price"),
+                            // shape: ShapeBorder.lerp(),
+                            backgroundColor: Theme.of(context).backgroundColor,),
+                          
 
-                        ],)
+                        ],),
+                        
                       ]),),
                   ),
                    Align(
