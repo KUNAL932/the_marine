@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class PlaceOrder extends StatelessWidget {
-  // final addressController = TextEditingController();
   @required final String title;
   @required final double quantity;
   @required final double price;
@@ -87,31 +86,43 @@ class PlaceOrder extends StatelessWidget {
                       ],),
                     ),
                   ),
-                  Card(
-                    child: Container(
-                      width: 400,
-                      height: 100,
-                      padding: EdgeInsets.all(10),
-                      child: Column(children: <Widget> [
-                        Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-                          children: <Widget>[
-                            Text("Quantity"),
-                            Text("$quantity"),
-                          ],
-                        ),
-                        Row(
+                  Expanded(
+                      child: Card(
+                      child: Container(
+                        // width: 400,
+                        // height: 100,
+                        padding: EdgeInsets.all(12),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget> [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                            Text("Product"),
+                            Text(title)
+                          ],),
+                          Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                          Text("Total"),
-                          Chip(
-                            label: Text("$price"),
-                            backgroundColor: Theme.of(context).backgroundColor),
-                        ],
-                        ),
-                        
-                      ]),),
+
+                            children: <Widget>[
+                              Text("Quantity"),
+                              Text("$quantity"),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                            Text("Total"),
+                            Chip(
+                              label: Text("$price"),
+                              backgroundColor: Theme.of(context).backgroundColor),
+                          ],
+                          ),
+                          
+                        ]),),
+                    ),
                   ),
                    Align(
                      alignment: Alignment.bottomCenter,
