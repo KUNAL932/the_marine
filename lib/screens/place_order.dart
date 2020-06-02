@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 class PlaceOrder extends StatelessWidget {
-  final addressController = TextEditingController();
+  // final addressController = TextEditingController();
   @required final String title;
   @required final double quantity;
   @required final double price;
-  @required final String imageUrl;
+  PlaceOrder(this.title,this.quantity,this.price);
 
-  PlaceOrder(this.title,this.quantity,this.price,this.imageUrl);
+  final streetController =  TextEditingController();
+  final cityController =  TextEditingController();
+  final landScapeController =  TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,11 +32,10 @@ class PlaceOrder extends StatelessWidget {
                             child: Column(children: <Widget>[
                               Text("YOUR ADDRESS"),
                               TextField(
-                            controller: addressController,
+                            controller: streetController,
                             decoration: InputDecoration(
                               border: UnderlineInputBorder(),
-                              hintText: "House Number/Street",
-                              // labelText: "Near Point/Next To",
+                              labelText: "House Number/Street",
                               
                             ),
                               maxLines:1,
@@ -51,7 +52,7 @@ class PlaceOrder extends StatelessWidget {
                             child: Column(children: <Widget>[
                               // Text("YOUR ADDRESS"),
                               TextField(
-                            controller: addressController,
+                            controller: cityController,
                             decoration: InputDecoration(
                               border: UnderlineInputBorder(),
                               labelText: "City/Town",                              
@@ -70,7 +71,7 @@ class PlaceOrder extends StatelessWidget {
                             child: Column(children: <Widget>[
                               // Text("YOUR ADDRESS"),
                               TextField(
-                            controller: addressController,
+                            controller: landScapeController,
                             decoration: InputDecoration(
                               border: UnderlineInputBorder(),
                               labelText: "LandScape",
@@ -82,24 +83,7 @@ class PlaceOrder extends StatelessWidget {
                               ],)
                             ),
                           ),
-                          // Card(
-                          // elevation: 6, 
-                          // color: Colors.white,
-                          // child: Container(
-                          //   padding: EdgeInsets.all(5.0),
-                          //   child: Column(children: <Widget>[
-                          //     TextField(
-                          //   controller: addressController,
-                          //   decoration: InputDecoration(
-                          //     border: UnderlineInputBorder(),
-                          //     labelText: "STATE",                              
-                          //   ),
-                          //     maxLines:1,
-                                
-                          //       ),
-                          //     ],)
-                          //   ),
-                          // ),
+                         
                       ],),
                     ),
                   ),
@@ -123,11 +107,9 @@ class PlaceOrder extends StatelessWidget {
                           Text("Total"),
                           Chip(
                             label: Text("$price"),
-                            // shape: ShapeBorder.lerp(),
-                            backgroundColor: Theme.of(context).backgroundColor,),
-                          
-
-                        ],),
+                            backgroundColor: Theme.of(context).backgroundColor),
+                        ],
+                        ),
                         
                       ]),),
                   ),
