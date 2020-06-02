@@ -31,7 +31,6 @@ class PlaceOrder extends StatelessWidget {
                 child: FlatButton(
                   child: Text("Search For New Products",
                     style: TextStyle(
-                      // color: Colors.black,
                       fontWeight: FontWeight.w500
                       ),
                   ),

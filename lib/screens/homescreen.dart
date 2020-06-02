@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart'; 
 import 'package:the_marin/screens/products_overview_screen.dart';
+import 'package:the_marin/widgets/product_categories.dart';
 // import 'package:the_marin/screens/checkout.dart';
 // import 'package:the_marin/providers/product_providers.dart';
 class HomeScreen extends StatefulWidget {
@@ -37,11 +38,12 @@ class _HomeScreenState extends State<HomeScreen> {
         body: Padding(
           padding: const EdgeInsets.all(12.0),
           child: ListView(
+            scrollDirection: Axis.vertical,
             children: <Widget>[
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                Container(
+              Container(
                   child: Text("Dishes",
                   style: TextStyle(
                     color: Colors.purple,
@@ -50,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   ),
                 ),
-                Container(
+              Container(
                   child: FlatButton(
                     onPressed: () {
                         Navigator.push(
@@ -61,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     child: Text("View More",
                     style: TextStyle(
-                      color: Colors.purple,
+                      color: Theme.of(context).backgroundColor,
                       fontSize: 16,
                       fontWeight: FontWeight.w600
                     ),
@@ -74,6 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(10.0),
                   child: Container(
+                    height: 200,
                   decoration: BoxDecoration(
                     borderRadius:
                      BorderRadius.circular(12),
@@ -90,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               ),
               ),
-              SizedBox(height:12,),
+              // SizedBox(height:12,),
               Container(
                 child: Row(
                   children: <Widget>[
@@ -119,11 +122,25 @@ class _HomeScreenState extends State<HomeScreen> {
               style: TextStyle(
                 color: Colors.purple,
                 fontSize: 16,
-                fontWeight: FontWeight.w600
+                fontWeight: FontWeight.w600,
               ),
               ),
               ),
               SizedBox(height: 12.0),
+              Row(
+                children:<Widget>[ Expanded(
+                child: Container(
+                  height: 50,
+                  width: 200,
+                  child: ListView.builder(
+                   scrollDirection: Axis.horizontal,
+                   itemCount: 6,
+                   itemBuilder: (context,i) => ProductCategories()
+
+                    ),
+                ),
+                  ),]
+              ),
               
             ],
           ),
