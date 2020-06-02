@@ -9,6 +9,68 @@ class PlaceOrder extends StatelessWidget {
   final streetController =  TextEditingController();
   final cityController =  TextEditingController();
   final landScapeController =  TextEditingController();
+
+  orderPlaced(context) {
+    return Dialog(
+  
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+      elevation: 10.0,
+      backgroundColor: Colors.white,
+      child: SizedBox(
+        height: 350,
+//        height: MediaQuery.of(context).size.height*0.5,
+        child: Stack(
+          children: <Widget>[
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                margin: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                width: double.infinity,
+                child: FlatButton(
+                  child: Text("Search For New Products",
+                    style: TextStyle(
+                      // color: Colors.black,
+                      fontWeight: FontWeight.w500
+                      ),
+                  ),
+                  color: Theme.of(context).backgroundColor,
+                  onPressed: () {
+                    
+                    // Navigator.push(context,MaterialPageRoute(builder: (context) => IntroScreen()),);
+                  },
+                ),
+              ),
+            ),
+            Column(
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.fromLTRB(10, 20, 10, 0),
+                  child: Center(
+                    child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTx53Zj-8KRsHI42Xjv0anIjad54wkNzoWhKSSuxUSI8GfLYNmY&usqp=CAU",                    
+                     fit: BoxFit.contain, height: 150,),
+                  ),
+                ),
+                Container(
+                    margin: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                    child: Text("Cheers! Your Order is on the Way",
+                      style: TextStyle(
+                          color: Theme.of(context).backgroundColor,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -131,7 +193,7 @@ class PlaceOrder extends StatelessWidget {
                           width: 400,
                           child: RaisedButton(
                             onPressed: (){
-                              // Navigator.of(context).push(MaterialPageRoute(builder: (context)=>PlaceOrder,),);
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>orderPlaced(context),),);
                             },
                             child: Text("Place Order"),
                             ),
