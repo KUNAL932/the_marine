@@ -65,8 +65,9 @@ class Checkout extends StatelessWidget {
                         ),
                          Card(
                               child: Container(
-                                height: 120,
-                              padding: EdgeInsets.fromLTRB(10,0,10 ,0),
+                                height: 130,
+                                // width: 250,
+                              padding: EdgeInsets.fromLTRB(7,7,7 ,7),
                               child: Column(
                                 children: <Widget>[
                                   Row(
@@ -84,9 +85,12 @@ class Checkout extends StatelessWidget {
                                           
                                         ]
                                         ),
-                                        RaisedButton(
-                                          onPressed: () {},
-                                          child: Text("Apply"),)
+                                        Container(
+                                          height: 30,
+                                          child: RaisedButton(
+                                            onPressed: () {},
+                                            child: Text("Apply"),),
+                                        )
                                   ],),
                                       Center(
                                         child: TextField(
